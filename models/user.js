@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     password: DataTypes.STRING
   }, {})
-  User.associate = function(models) {
+  
+  User.associate = models => {
     // associations can be defined here
     User.hasMany(models.Todo)
   }

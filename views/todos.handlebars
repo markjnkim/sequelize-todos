@@ -4,13 +4,13 @@
       <input type="checkbox" name="done" {{#if todo.done}}checked{{/if}}>
       <input type="text" placeholder="name" name="name"
        value="{{todo.name}}">
-      <button type="submit">Update</button>
-      <a href="/todos">or Create New</a>
+      <button  class="btn btn-primary" type="submit">Update</button>
+      <a href="/todos" class="btn btn-warning">or Create New</a>
     </form>
   {{else}}
     <form action="/todos" method="POST">
       <input type="text" placeholder="name" name="name">
-      <button type="submit">Submit</button>
+      <button  class="btn btn-primary" type="submit">Submit</button>
     </form>
   {{/if}}
 </div>
@@ -25,10 +25,10 @@
           onchange="handleCheckboxClick('{{this.id}}', {{this.done}});"/>
         {{this.name}} 
       </p>
-      <a href="/todos/{{this.id}}"><button style="margin: 0 10px;">edit</button></a>
+      <a href="/todos/{{this.id}}" ><button class="btn btn-primary" style="margin: 0 10px;">edit</button></a>
       <form action="/todos/{{this.id}}?_method=DELETE" method="POST"
         style="display: inline;">
-        <button type="submit">delete</button>
+        <button type="submit" class="btn btn-danger" >delete</button>
       </form>
     </div>
   {{/each}}

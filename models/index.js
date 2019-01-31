@@ -4,6 +4,7 @@ const Sequelize = require('sequelize')
 const basename = path.basename(__filename)
 const db = {}
 
+// Create a new instance of Sequelize with our local database config settings
 const sequelize = new Sequelize("todo_sequelize", "root", "password", {
   "username": "root",
   "password": "password",
@@ -31,5 +32,6 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize
 db.Sequelize = Sequelize
 
+// this allows other files to get access to our configured database
 module.exports = db
 
